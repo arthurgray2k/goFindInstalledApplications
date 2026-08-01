@@ -92,4 +92,6 @@ Outputs the complete analysis as JSON, which can be piped to other command line 
 ## 6. Distro & Platform Support
 Currently supports:
 - **Fedora/RHEL** (via `dnf5` toolchain)
+- **Debian/Ubuntu** (via `dpkg`/`apt` toolchain)
+- **Arch Linux** (via `pacman` toolchain)
 - **Flatpak Applications** (runtimes are analyzed as shared dependencies)

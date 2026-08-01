@@ -4,9 +4,11 @@ A Go-based command-line tool that lists installed user applications and analyzes
 
 Currently supports:
 - **Fedora/RHEL** (via DNF5)
+- **Debian/Ubuntu** (via Apt/DPKG)
+- **Arch Linux** (via Pacman)
 - **Flatpaks** (cross-distro)
 
-Additional backends (Debian/Apt, Arch/Pacman, Windows) are planned for future iterations.
+Windows support is planned for future iterations.
 
 ---
 
@@ -31,7 +33,7 @@ Additional backends (Debian/Apt, Arch/Pacman, Windows) are planned for future it
 
 ### Prerequisites
 - Go 1.22 or higher
-- Fedora Linux 41+ (uses DNF5) or any Linux with `flatpak` installed
+- Linux distribution with DNF5, APT/DPKG, Pacman, or Flatpak support
 
 ### Build
 Compile the binary using:
