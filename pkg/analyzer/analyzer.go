@@ -37,6 +37,11 @@ func Run(showSystem bool) (*RunResult, error) {
 		backends = append(backends, pacmanBackend)
 	}
 
+	windowsBackend := packagemanager.NewWindowsBackend()
+	if windowsBackend.IsSupported() {
+		backends = append(backends, windowsBackend)
+	}
+
 	if len(backends) == 0 {
 		return nil, fmt.Errorf("no supported package managers found on the system")
 	}

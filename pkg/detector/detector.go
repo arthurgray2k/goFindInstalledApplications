@@ -258,6 +258,12 @@ func (d *Detector) resolveAppDetails(pkg *packagemanager.Package) (AppType, stri
 	}
 
 	if len(binaries) > 0 {
+		// On Windows, registry-installed apps are typically GUI Desktop applications
+		bin := binaries[0]
+		if strings.Contains(bin, "\\") || strings.HasSuffix(strings.ToLower(bin), ".exe") {
+			return TypeDesktop, bin
+		}
+
 		// Try to find a binary that matches the package name
 		for _, bin := range binaries {
 			base := filepath.Base(bin)
