@@ -59,33 +59,58 @@ When listing applications, the tool displays four size fields:
 
 ### View User-Installed Apps (Default Name Sorting)
 Lists all user-installed applications sorted alphabetically:
-```bash
-./gfia
-```
+* **Linux/macOS**:
+  ```bash
+  ./gfia
+  ```
+* **Windows**:
+  ```powershell
+  ./gfia.exe
+  ```
 
 ### Find the Largest Applications by Footprint
 Lists user-installed apps sorted from largest to smallest disk footprint (Self + Exclusive):
-```bash
-./gfia -sort footprintsize
-```
+* **Linux/macOS**:
+  ```bash
+  ./gfia -sort footprintsize
+  ```
+* **Windows**:
+  ```powershell
+  ./gfia.exe -sort footprintsize
+  ```
 
 ### Find Apps with the Largest Exclusive Dependency Chains
 Lists user-installed apps sorted by the size of their exclusive dependencies:
-```bash
-./gfia -sort excludedepsize
-```
+* **Linux/macOS**:
+  ```bash
+  ./gfia -sort excludedepsize
+  ```
+* **Windows**:
+  ```powershell
+  ./gfia.exe -sort excludedepsize
+  ```
 
 ### Include Pre-installed System Applications
-Shows both user-installed and pre-installed system applications (like `firewall-config` or `falkon`), while filtering out base system libraries:
-```bash
-./gfia -system
-```
+Shows both user-installed and pre-installed system applications, filtering out base system libraries:
+* **Linux/macOS**:
+  ```bash
+  ./gfia -system
+  ```
+* **Windows**:
+  ```powershell
+  ./gfia.exe -system
+  ```
 
 ### Export Results to JSON
-Outputs the complete analysis as JSON, which can be piped to other command line tools like `jq` or written to a file:
-```bash
-./gfia -format json > report.json
-```
+Outputs the complete analysis as JSON:
+* **Linux/macOS**:
+  ```bash
+  ./gfia -format json > report.json
+  ```
+* **Windows**:
+  ```powershell
+  ./gfia.exe -format json > report.json
+  ```
 
 ---
 
