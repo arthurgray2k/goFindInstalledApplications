@@ -56,7 +56,7 @@ func (d *DNF5Backend) ListPackages() ([]*Package, error) {
 }
 
 func (d *DNF5Backend) queryBasicInfo() (map[string]*Package, error) {
-	cmd := exec.Command("dnf5", "repoquery", "-q", "--installed", "--queryformat", "%{name}|%{version}-%{release}|%{reason}|%{installsize}|%{summary}\n")
+	cmd := exec.Command("dnf5", "repoquery", "-C", "-q", "--installed", "--queryformat", "%{name}|%{version}-%{release}|%{reason}|%{installsize}|%{summary}\n")
 	var stdout bytes.Buffer
 	cmd.Stdout = &stdout
 
@@ -116,7 +116,7 @@ func (d *DNF5Backend) queryBasicInfo() (map[string]*Package, error) {
 }
 
 func (d *DNF5Backend) queryProvides(packagesMap map[string]*Package) error {
-	cmd := exec.Command("dnf5", "repoquery", "-q", "--installed", "--queryformat", "%{name}|%{provides}\n")
+	cmd := exec.Command("dnf5", "repoquery", "-C", "-q", "--installed", "--queryformat", "%{name}|%{provides}\n")
 	var stdout bytes.Buffer
 	cmd.Stdout = &stdout
 
@@ -150,7 +150,7 @@ func (d *DNF5Backend) queryProvides(packagesMap map[string]*Package) error {
 }
 
 func (d *DNF5Backend) queryRequires(packagesMap map[string]*Package) error {
-	cmd := exec.Command("dnf5", "repoquery", "-q", "--installed", "--queryformat", "%{name}|%{requires}\n")
+	cmd := exec.Command("dnf5", "repoquery", "-C", "-q", "--installed", "--queryformat", "%{name}|%{requires}\n")
 	var stdout bytes.Buffer
 	cmd.Stdout = &stdout
 
@@ -184,7 +184,7 @@ func (d *DNF5Backend) queryRequires(packagesMap map[string]*Package) error {
 }
 
 func (d *DNF5Backend) queryFiles(packagesMap map[string]*Package) error {
-	cmd := exec.Command("dnf5", "repoquery", "-q", "--installed", "--queryformat", "%{name}|%{files}\n")
+	cmd := exec.Command("dnf5", "repoquery", "-C", "-q", "--installed", "--queryformat", "%{name}|%{files}\n")
 	var stdout bytes.Buffer
 	cmd.Stdout = &stdout
 
