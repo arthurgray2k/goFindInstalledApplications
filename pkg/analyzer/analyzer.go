@@ -32,6 +32,11 @@ func Run(showSystem bool) (*RunResult, error) {
 		backends = append(backends, dpkgBackend)
 	}
 
+	pacmanBackend := packagemanager.NewPacmanBackend()
+	if pacmanBackend.IsSupported() {
+		backends = append(backends, pacmanBackend)
+	}
+
 	if len(backends) == 0 {
 		return nil, fmt.Errorf("no supported package managers found on the system")
 	}

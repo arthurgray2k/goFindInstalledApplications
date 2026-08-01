@@ -96,6 +96,18 @@ var coreSystemPackages = map[string]bool{
 	"bsdutils":           true,
 	"gpgv":               true,
 	"sensible-utils":     true,
+	"linux":              true,
+	"linux-firmware":     true,
+	"pacman":             true,
+	"iproute2":           true,
+	"shadow":             true,
+	"gcc-libs":           true,
+	"iana-etc":           true,
+	"licenses":           true,
+	"systemd-sysvcompat": true,
+	"device-mapper":      true,
+	"cryptsetup":         true,
+	"vi":                 true,
 }
 
 // DetectAndFilter processes packages and returns the list of detected applications.

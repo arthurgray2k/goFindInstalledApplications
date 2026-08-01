@@ -228,22 +228,3 @@ func (d *DNF5Backend) queryFiles(packagesMap map[string]*Package) error {
 
 	return scanner.Err()
 }
-
-func isBinaryPath(path string) bool {
-	// Standard binary directories on Linux
-	binDirs := []string{
-		"/bin/",
-		"/sbin/",
-		"/usr/bin/",
-		"/usr/sbin/",
-		"/usr/local/bin/",
-		"/usr/local/sbin/",
-		"/usr/games/",
-	}
-	for _, dir := range binDirs {
-		if strings.HasPrefix(path, dir) {
-			return true
-		}
-	}
-	return false
-}

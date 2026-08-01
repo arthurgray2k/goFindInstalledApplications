@@ -1,5 +1,7 @@
 package packagemanager
 
+import "strings"
+
 // InstallReason defines why a package was installed.
 type InstallReason string
 
@@ -27,4 +29,22 @@ type Backend interface {
 	Name() string
 	IsSupported() bool
 	ListPackages() ([]*Package, error)
+}
+
+func isBinaryPath(path string) bool {
+	binDirs := []string{
+		"/bin/",
+		"/sbin/",
+		"/usr/bin/",
+		"/usr/sbin/",
+		"/usr/local/bin/",
+		"/usr/local/sbin/",
+		"/usr/games/",
+	}
+	for _, dir := range binDirs {
+		if strings.HasPrefix(path, dir) {
+			return true
+		}
+	}
+	return false
 }
