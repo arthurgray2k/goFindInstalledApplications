@@ -82,6 +82,20 @@ var coreSystemPackages = map[string]bool{
 	"pciutils":           true,
 	"rsync":              true,
 	"shadow-utils-subid": true,
+	"libc6":              true,
+	"dpkg":               true,
+	"apt":                true,
+	"dash":               true,
+	"debianutils":        true,
+	"base-files":         true,
+	"base-passwd":        true,
+	"login":              true,
+	"passwd":             true,
+	"sysvinit-utils":     true,
+	"diffutils":          true,
+	"bsdutils":           true,
+	"gpgv":               true,
+	"sensible-utils":     true,
 }
 
 // DetectAndFilter processes packages and returns the list of detected applications.
