@@ -95,3 +95,12 @@ Currently supports:
 - **Debian/Ubuntu** (via `dpkg`/`apt` toolchain)
 - **Arch Linux** (via `pacman` toolchain)
 - **Flatpak Applications** (runtimes are analyzed as shared dependencies)
+- **Windows 10/11** (via native Registry querying)
+
+### Windows Support Notes
+Windows applications do not use a shared package dependency tree like Linux. Windows installations are typically self-contained within their own folders.
+Consequently, on Windows:
+- **Self Size** is retrieved from the program's `EstimatedSize` registry value.
+- **Exclusive Deps** and **Shared Deps** default to `0 B` since dependencies are not shared at the package level.
+- **Total Footprint** equals the **Self Size**.
+- Applications are classified as `Desktop` if their installation/uninstall path contains Windows backslashes (`\`) or ends in `.exe`.

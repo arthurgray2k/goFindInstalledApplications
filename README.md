@@ -7,8 +7,7 @@ Currently supports:
 - **Debian/Ubuntu** (via Apt/DPKG)
 - **Arch Linux** (via Pacman)
 - **Flatpaks** (cross-distro)
-
-Windows support is planned for future iterations.
+- **Windows** (via native Registry queries)
 
 ---
 
@@ -33,7 +32,7 @@ Windows support is planned for future iterations.
 
 ### Prerequisites
 - Go 1.22 or higher
-- Linux distribution with DNF5, APT/DPKG, Pacman, or Flatpak support
+- Linux distribution with DNF5, APT/DPKG, Pacman, or Flatpak support, OR Windows 10/11
 
 ### Build
 Compile the binary using:
