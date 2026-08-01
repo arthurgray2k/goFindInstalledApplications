@@ -6,7 +6,7 @@
 
 ## 1. Building the Application
 
-Compile the Go application to create the `gfia` executable:
+Compile the Go application to create the `gfia` executable (which generates `gfia.exe` on Windows):
 
 ```bash
 go build -o gfia ./cmd/goFindInstalledApplications/main.go

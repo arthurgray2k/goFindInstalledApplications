@@ -41,7 +41,7 @@ go build -o gfia ./cmd/goFindInstalledApplications/main.go
 ```
 
 ### Run
-Run the compiled binary:
+Run the compiled binary (use `./gfia.exe` on Windows):
 ```bash
 ./gfia
 ```
